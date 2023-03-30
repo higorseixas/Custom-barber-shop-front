@@ -1,10 +1,10 @@
 import { Footer } from "../Footer/footer"
-import { Navbar } from "../Navbar/navbar"
+import { NavBar } from "../Navbar/navbar"
 
 export const Layout = () => {
     return (
         <>
-            <Navbar />
+            <NavBar/>
             <div>Layout</div>
             <Footer />
         </>
