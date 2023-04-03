@@ -1,5 +1,5 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-export interface footerIoconInterface {
+export interface iconInterface {
   icon: IconProp;
 }

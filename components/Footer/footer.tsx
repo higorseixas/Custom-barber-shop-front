@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faClock, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { footerIoconInterface } from "./footerIoconInterface";
+import { iconInterface } from "@/pages/interfaces/iconInterface";
 
-const Icon = ({ icon }: footerIoconInterface) => {
+const Icon = ({ icon }: iconInterface) => {
   return <FontAwesomeIcon icon={icon} />;
 };
 
