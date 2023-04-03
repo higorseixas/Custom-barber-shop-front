@@ -1,4 +1,11 @@
 import styled from 'styled-components'
+import { iconInterface } from '@/pages/interfaces/iconInterface';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
+
+const Icon = ({ icon }: iconInterface) => {
+  return <FontAwesomeIcon icon={icon} />;
+}
 
 const NavbarContainer = styled.nav`
   display: flex;
@@ -30,6 +37,9 @@ const NavbarButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  span {
+    margin-left: 8px;
+  }
 `;
 
 const NavbarButtonContainer = styled.div`
@@ -40,15 +50,37 @@ const NavbarButtonContainer = styled.div`
   margin: 0 auto;
 `;
 
+const VerticalLine = styled.div`
+  border-left: 1px solid #ccc;
+  height: 30px;
+  margin: 0 10px;
+`;
+
+const StyledIcon = styled(Icon)`
+  margin-right: 15px;
+`;
+
 export const NavBar = () => {
-    return (
-      <NavbarContainer>
-        <Logo src="/images/logo.png" alt="Logo" />
-        <NavbarButtonContainer>
-          <NavbarButton>Button 1</NavbarButton>
-          <NavbarButton>Button 2</NavbarButton>
-          <NavbarButton>Button 3</NavbarButton>
-        </NavbarButtonContainer>
-      </NavbarContainer>
-    );
+  return (
+    <NavbarContainer>
+      <Logo src="/images/logo.png" alt="Logo" />
+      
+      <NavbarButtonContainer>
+        <NavbarButton>
+          <StyledIcon icon={faPhone} />
+          <span>(43) 9999-9999</span>
+        </NavbarButton>
+        <NavbarButton>
+          <StyledIcon icon={faClock} />
+          <span>AGENDAR HORÁRIO</span>
+        </NavbarButton>
+      </NavbarButtonContainer>
+
+      <VerticalLine />
+      <NavbarButton>
+        <StyledIcon icon={faUser} />
+        <span>Login</span>
+      </NavbarButton>
+    </NavbarContainer>
+  );
 };
