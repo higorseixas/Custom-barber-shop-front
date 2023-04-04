@@ -53,6 +53,7 @@ const Logo = styled.img`
 const HelpColumn = styled.div`
   display: flex;
   flex-direction: column;
+  margin-right: 10px;
 
   @media (max-width: 768px) {
     margin-bottom: 20px;
@@ -74,7 +75,7 @@ const HelpLink = styled.a`
 const InfoColumn = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 50px;
+  margin-right: 10px;
 
   @media (max-width: 768px) {
     margin-right: 0;
@@ -120,6 +121,7 @@ const StyledIcon = styled(Icon)`
 const SocialColumn = styled.div`
   display: flex;
   flex-direction: column;
+  margin-right: 20px;
 
   @media (max-width: 768px) {
     margin-bottom: 20px;
