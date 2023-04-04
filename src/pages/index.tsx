@@ -136,7 +136,7 @@ const ServicesBox = styled.div`
   &:hover {
     border-radius: 0.88rem;
     transition: all 0.1s ease 0s;
-    border: 3px solid orange;
+    box-shadow: 0 0.5rem 1rem orange;
   }
 `;
 

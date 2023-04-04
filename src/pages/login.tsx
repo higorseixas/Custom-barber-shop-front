@@ -3,8 +3,7 @@ import styled from "styled-components";
 import { FaEye } from "react-icons/fa";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 
-
-const Container =styled.div`
+const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,8 +33,11 @@ const Box = styled.div`
 
 const InputContainer = styled.div`
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
 `;
+
 const Input = styled.input`
   display: block;
   padding: 10px;
@@ -48,12 +50,13 @@ const Input = styled.input`
   &:hover {
     border-radius: 4px;
     transition: all 0.1s ease 0s;
-    border: 3px solid orange;
+    // border: 1px solid orange;
+    box-shadow: orange 0px 0px 0px 4px, rgba(123, 123, 123, 0.5) 0px 0px 0px 5px;
   }
 
   &:focus {
     outline: none;
-    border: 3px solid orange;
+    box-shadow: orange 0px 0px 0px 4px, rgba(123, 123, 123, 0.5) 0px 0px 0px 5px;
   }
 `;
 
@@ -66,7 +69,7 @@ const Button = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   
   &:hover {
     background-color: #3e8e41;
@@ -74,17 +77,20 @@ const Button = styled.button`
 `;
 
 const PasswordRevealButton = styled.button`
-  position: sticky;
-  top: -30px;
-  left: 220px;
-  background-color: #FFFFFF;
+  right: 0.75rem;
+  margin-bottom: 10px;
+  position: absolute;
   border: none;
-  cursor: pointer;
+  background: transparent;
+  border-radius: 10px;
+  display: flex;
+  padding: 0.75rem;
+  transition: all 0.3s ease 0s;
 `;
 
 const PasswordRecoverButton = styled.button`
   background: transparent;
-  margin-bottom: 2px;
+  margin-bottom: 10px;
   border: none;
   outline: none;
   font-size: 1rem;
@@ -101,10 +107,10 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   const toggleShowPassword = () => setShowPassword(!showPassword);
-  return(
+  return (
     <Container>
       <Box>
-        <Logo src="/images/logo.png"/>
+        <Logo src="/images/logo.png" />
         <Input type="text" placeholder="Usuário" />
         <InputContainer>
           <Input
@@ -116,11 +122,11 @@ export default function Login() {
           <PasswordRevealButton onClick={toggleShowPassword}>
             <FaEye />
           </PasswordRevealButton>
-        <PasswordRecoverButton>Esqueceu a senha?</PasswordRecoverButton>
         </InputContainer>
+        <PasswordRecoverButton>Esqueceu a senha?</PasswordRecoverButton>
         <Button>Login</Button>
         <PasswordRecoverButton>Cadastrar-se</PasswordRecoverButton>
       </Box>
-  </Container>
+    </Container>
   )
 }
