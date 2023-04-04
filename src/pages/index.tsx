@@ -141,12 +141,12 @@ const ServicesBox = styled.div`
 `;
 
 const ServicesBoxTitle = styled.h3`
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   margin-bottom: 2rem;
 `;
 
 const ServicesBoxText = styled.p`
-  font-size: 4rem;
+  font-size: 2.7rem;
   text-align: center;
   font-weight: bold;
 `;
