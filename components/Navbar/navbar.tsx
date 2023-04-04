@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { iconInterface } from '@/pages/interfaces/iconInterface';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 const Icon = ({ icon }: iconInterface) => {
   return <FontAwesomeIcon icon={icon} />;
@@ -72,7 +73,7 @@ export const NavBar = () => {
   return (
     <NavbarContainer>
       <Logo src="/images/logo.png" alt="Logo" />
-      
+
       <NavbarButtonContainer>
         <NavbarButton>
           <StyledIcon icon={faPhone} />
@@ -85,10 +86,12 @@ export const NavBar = () => {
       </NavbarButtonContainer>
 
       <VerticalLine />
-      <NavbarButton>
-        <StyledIcon icon={faUser} />
-        <span>Login</span>
-      </NavbarButton>
+      <Link href={'/login'}>
+        <NavbarButton>
+          <StyledIcon icon={faUser} />
+          <span>Login</span>
+        </NavbarButton>
+      </Link>
     </NavbarContainer>
   );
 };
