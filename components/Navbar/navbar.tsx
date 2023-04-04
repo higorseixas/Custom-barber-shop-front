@@ -9,7 +9,7 @@ const Icon = ({ icon }: iconInterface) => {
 
 const NavbarContainer = styled.nav`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 10px;
   background-color: #333;
@@ -20,6 +20,14 @@ const NavbarContainer = styled.nav`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+
+    button:not(:last-child) {
+      display: none;
+    }
   }
 `;
 
