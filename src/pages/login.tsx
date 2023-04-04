@@ -17,26 +17,24 @@ const Container =styled.div`
 const Logo = styled.img`
   width: 100px;
   height: 100px;
+  margin-bottom: 10px;
 `
 
 const Box = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  opacity: 0.9;
   align-items: center;
   background-color: #333;
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 `
-const Title = styled.h1`
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: white;
-  font-weight: bold;
-`
+
 const InputContainer = styled.div`
   position: relative;
+  margin-bottom: 10px;
 `;
 const Input = styled.input`
   display: block;
@@ -61,6 +59,7 @@ const Input = styled.input`
 
 const Button = styled.button`
   padding: 10px 20px;
+  width: 100%;
   font-size: 16px;
   background-color: #4CAF50;
   color: #FFFFFF;
@@ -75,12 +74,26 @@ const Button = styled.button`
 `;
 
 const PasswordRevealButton = styled.button`
-  position: center;
+  position: sticky;
   top: -30px;
   left: 220px;
   background-color: #FFFFFF;
   border: none;
   cursor: pointer;
+`;
+
+const PasswordRecoverButton = styled.button`
+  background: transparent;
+  margin-bottom: 2px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  text-decoration: none;
+  color: orange;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export default function Login() {
@@ -92,7 +105,6 @@ export default function Login() {
     <Container>
       <Box>
         <Logo src="/images/logo.png"/>
-        <Title>LOGIN</Title>
         <Input type="text" placeholder="Usuário" />
         <InputContainer>
           <Input
@@ -104,9 +116,10 @@ export default function Login() {
           <PasswordRevealButton onClick={toggleShowPassword}>
             <FaEye />
           </PasswordRevealButton>
+        <PasswordRecoverButton>Esqueceu a senha?</PasswordRecoverButton>
         </InputContainer>
-        <Button>Entrar</Button>
-        <Button>Recuperar Senha</Button>
+        <Button>Login</Button>
+        <PasswordRecoverButton>Cadastrar-se</PasswordRecoverButton>
       </Box>
   </Container>
   )
