@@ -1,7 +1,10 @@
 import { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { FaEye } from "react-icons/fa";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { PasswordRecoverButton, PasswordRevealButton, PrimaryButton } from "@/components/buttons/Button";
+import { InputLogin } from "@/components/Forms/Input";
+import { PrimaryLogo } from "@/components/logo/PrimaryLogo";
 
 const Container = styled.div`
   display: flex;
@@ -11,12 +14,6 @@ const Container = styled.div`
   background-image: url('/images/homem-a-barba.jpg');
   background-size: cover;
   background-position: center;
-`
-
-const Logo = styled.img`
-  width: 100px;
-  height: 100px;
-  margin-bottom: 10px;
 `
 
 const Box = styled.div`
@@ -38,70 +35,6 @@ const InputContainer = styled.div`
   align-items: center;
 `;
 
-const Input = styled.input`
-  display: block;
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 10px;
-  border: none;
-  border-radius: 4px;
-  transition: border 0.2s ease-in-out;
-
-  &:hover {
-    border-radius: 4px;
-    transition: all 0.1s ease 0s;
-    // border: 1px solid orange;
-    box-shadow: orange 0px 0px 0px 4px, rgba(123, 123, 123, 0.5) 0px 0px 0px 5px;
-  }
-
-  &:focus {
-    outline: none;
-    box-shadow: orange 0px 0px 0px 4px, rgba(123, 123, 123, 0.5) 0px 0px 0px 5px;
-  }
-`;
-
-const Button = styled.button`
-  padding: 10px 20px;
-  width: 100%;
-  font-size: 16px;
-  background-color: #4CAF50;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  
-  &:hover {
-    background-color: #3e8e41;
-  }
-`;
-
-const PasswordRevealButton = styled.button`
-  right: 0.75rem;
-  margin-bottom: 10px;
-  position: absolute;
-  border: none;
-  background: transparent;
-  border-radius: 10px;
-  display: flex;
-  padding: 0.75rem;
-  transition: all 0.3s ease 0s;
-`;
-
-const PasswordRecoverButton = styled.button`
-  background: transparent;
-  margin-bottom: 10px;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  text-decoration: none;
-  color: orange;
-  cursor: pointer;
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
 export default function Login() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -110,10 +43,13 @@ export default function Login() {
   return (
     <Container>
       <Box>
-        <Logo src="/images/logo.png" />
-        <Input type="text" placeholder="Usuário" />
+        <PrimaryLogo 
+          src="/images/logo.png"
+          marginBottom="10px"
+        />
+        <InputLogin type="text" placeholder="Usuário" />
         <InputContainer>
-          <Input
+          <InputLogin
             type={showPassword ? "text" : "password"}
             value={password}
             onChange={(event) => setPassword(event.target.value)}
@@ -124,7 +60,13 @@ export default function Login() {
           </PasswordRevealButton>
         </InputContainer>
         <PasswordRecoverButton>Esqueceu a senha?</PasswordRecoverButton>
-        <Button>Login</Button>
+        <PrimaryButton 
+          width="100%"
+          marginBottom="10px" 
+          backgroundColor="#4CAF50"
+        >
+          Login
+        </PrimaryButton>
         <PasswordRecoverButton>Cadastrar-se</PasswordRecoverButton>
       </Box>
     </Container>

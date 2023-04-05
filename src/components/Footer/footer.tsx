@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faClock, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { iconInterface } from "@/interfaces/iconInterface";
 import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { PrimaryLogo } from "../logo/PrimaryLogo";
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -37,16 +38,6 @@ const FooterContent = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-`;
-
-const Logo = styled.img`
-  height: 200px;
-  margin-left: 50px;
-
-  @media (max-width: 768px) {
-    margin: 0;
-    margin-bottom: 20px;
   }
 `;
 
@@ -147,7 +138,15 @@ export const Footer = () =>{
       <FooterContainer>
       <GlobalStyle />
       <FooterContent>
-        <Logo src="/images/logo.png" alt="Logo" />
+        <PrimaryLogo 
+          src="/images/logo.png" 
+          alt="Logo"
+          height="200px"
+          width="200px"
+          media={{
+            mobile: { margin: '0', marginBottom: '20px' },
+          }}
+        />
 
         <HelpColumn>
           <Title>Ajuda</Title>

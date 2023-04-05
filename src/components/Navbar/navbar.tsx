@@ -3,6 +3,8 @@ import { iconInterface } from '@/interfaces/iconInterface';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import { PrimaryButton } from '../buttons/Button';
+import { PrimaryLogo } from '../logo/PrimaryLogo';
 
 const Icon = ({ icon }: iconInterface) => {
   return <FontAwesomeIcon icon={icon} />;
@@ -32,25 +34,6 @@ const NavbarContainer = styled.nav`
   }
 `;
 
-const Logo = styled.img`
-  width: 70px;
-  height: 70px;
-`;
-
-const NavbarButton = styled.button`
-  padding: 10px 20px;
-  margin-left: 10px;
-  background-color: orange;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  span {
-    margin-left: 8px;
-  }
-`;
-
 const NavbarButtonContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -72,25 +55,32 @@ const StyledIcon = styled(Icon)`
 export const NavBar = () => {
   return (
     <NavbarContainer>
-      <Logo src="/images/logo.png" alt="Logo" />
+      <PrimaryLogo 
+      src="/images/logo.png" 
+      alt="Logo"
+      width="70px"
+      height="70px"/>
 
       <NavbarButtonContainer>
-        <NavbarButton>
+        <PrimaryButton span={{ marginLeft: "10px" }}>
           <StyledIcon icon={faPhone} />
           <span>(43) 9999-9999</span>
-        </NavbarButton>
-        <NavbarButton>
+        </PrimaryButton>
+        <PrimaryButton
+          marginLeft='10px'
+          span={{ marginLeft: "10px" }}
+        >
           <StyledIcon icon={faClock} />
           <span>AGENDAR HORÁRIO</span>
-        </NavbarButton>
+        </PrimaryButton>
       </NavbarButtonContainer>
 
       <VerticalLine />
       <Link href={'/login'}>
-        <NavbarButton>
+        <PrimaryButton span={{ marginLeft: "10px" }}>
           <StyledIcon icon={faUser} />
           <span>Login</span>
-        </NavbarButton>
+        </PrimaryButton>
       </Link>
     </NavbarContainer>
   );
