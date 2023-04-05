@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { iconInterface } from '@/pages/interfaces/iconInterface';
+import { iconInterface } from '@/interfaces/iconInterface';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';

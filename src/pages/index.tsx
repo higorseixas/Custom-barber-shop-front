@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
-import { Layout } from '../../components/Layout/layout'
+import { Layout } from '../components/Layout/layout'
 
 export const GlobalStyle = createGlobalStyle`
   body {

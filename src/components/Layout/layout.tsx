@@ -1,4 +1,4 @@
-import { layoutInterface } from "@/pages/interfaces/layoutInterface"
+import { layoutInterface } from "@/interfaces/layoutInterface"
 import { Footer } from "../Footer/footer"
 import { NavBar } from "../Navbar/navbar"
 

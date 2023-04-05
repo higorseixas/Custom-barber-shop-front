@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faClock, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { iconInterface } from "@/pages/interfaces/iconInterface";
+import { iconInterface } from "@/interfaces/iconInterface";
 import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 export const GlobalStyle = createGlobalStyle`
