@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot, faClock, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { iconInterface } from "@/interfaces/iconInterface";
 import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { PrimaryLogo } from "../logo/PrimaryLogo";
+import { PrimaryLogo } from "../Logo/primaryLogo";
 
 export const GlobalStyle = createGlobalStyle`
   body {

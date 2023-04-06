@@ -1,11 +1,11 @@
 import { useState } from "react";
 import React from "react";
 import { FaEye } from "react-icons/fa";
-import { PasswordRecoverButton, PasswordRevealButton, PrimaryButton } from "@/components/buttons/Button";
-import { InputLogin } from "@/components/Forms/Input";
-import { PrimaryLogo } from "@/components/logo/PrimaryLogo";
-import { ContainerImage, ContainerInput } from "@/components/container/PrimaryContainer";
-import { PimaryBox } from "@/components/Box/PrimaryBox";
+import { PasswordRecoverButton, PasswordRevealButton, PrimaryButton } from "@/components/Buttons/button";
+import { InputLogin } from "@/components/Forms/primaryInput";
+import { PrimaryLogo } from "@/components/Logo/primaryLogo";
+import { ContainerImage, ContainerInput } from "@/components/Container/primaryContainer";
+import { PimaryBox } from "@/components/Box/primaryBox";
 
 
 export default function Login() {

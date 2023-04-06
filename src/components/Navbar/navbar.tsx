@@ -3,8 +3,8 @@ import { iconInterface } from '@/interfaces/iconInterface';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
-import { PrimaryButton } from '../buttons/Button';
-import { PrimaryLogo } from '../logo/PrimaryLogo';
+import { PrimaryButton } from '../Buttons/button';
+import { PrimaryLogo } from '../Logo/primaryLogo';
 
 const Icon = ({ icon }: iconInterface) => {
   return <FontAwesomeIcon icon={icon} />;

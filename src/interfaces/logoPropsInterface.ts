@@ -1,5 +1,3 @@
-import { CSSObject } from "styled-components";
-
 export interface logoPropsInterface {
   width?: string;
   height?: string;
