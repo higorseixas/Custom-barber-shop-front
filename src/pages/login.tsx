@@ -6,6 +6,7 @@ import { InputLogin } from "@/components/Forms/primaryInput";
 import { PrimaryLogo } from "@/components/Logo/primaryLogo";
 import { ContainerImage, ContainerInput } from "@/components/Container/primaryContainer";
 import { PimaryBox } from "@/components/Box/primaryBox";
+import Link from "next/link";
 
 
 export default function Login() {
@@ -32,7 +33,9 @@ export default function Login() {
             <FaEye />
           </PasswordRevealButton>
         </ContainerInput>
+        <Link href={'/resetPassword'}>
         <PasswordRecoverButton>Esqueceu a senha?</PasswordRecoverButton>
+        </Link>
         <PrimaryButton 
           width="100%"
           marginBottom="10px" 
