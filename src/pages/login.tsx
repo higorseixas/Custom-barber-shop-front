@@ -43,7 +43,9 @@ export default function Login() {
         >
           Login
         </PrimaryButton>
+        <Link href={'/register'}>
         <PasswordRecoverButton>Cadastrar-se</PasswordRecoverButton>
+        </Link>
       </PimaryBox>
     </ContainerImage>
   )
