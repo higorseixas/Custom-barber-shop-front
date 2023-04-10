@@ -33,7 +33,7 @@ export default function Login() {
             <FaEye />
           </PasswordRevealButton>
         </ContainerInput>
-        <Link href={'/resetPassword'}>
+        <Link href={'/recoverdPassword'}>
         <PasswordRecoverButton>Esqueceu a senha?</PasswordRecoverButton>
         </Link>
         <PrimaryButton 

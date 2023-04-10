@@ -16,4 +16,6 @@ export const ContainerInput = styled.div<ContainerInputProps>`
   margin-bottom: ${(props) => props.marginBottom || '0px'};
   display: ${(props) => props.display || 'flex'};
   align-items: ${(props) => props.alignItems || 'center'};
+  flex-direction: ${(props) => props.flexDirection || 'unset'};
+  gap: ${(props) => props.gap || 'unset'};
 `;

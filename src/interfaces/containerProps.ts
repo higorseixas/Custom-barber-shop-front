@@ -14,4 +14,6 @@ export interface ContainerInputProps {
   marginBottom: string;
   display: string;
   alignItems: string;
+  flexDirection: string;
+  gap: string;
 }
