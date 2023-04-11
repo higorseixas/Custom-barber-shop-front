@@ -31,6 +31,7 @@ const nextConfig = {
     styledComponents: true,
   },
   webpack: (config, context) => {
+    // config.resolve.alias['@'] = path.resolve(__dirname, 'src');
     config.watchOptions = {
       poll: 1000,
       aggregateTimeout: 300
