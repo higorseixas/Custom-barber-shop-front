@@ -1,12 +1,12 @@
 
 export interface ContainerProps {
-  display: string;
-  alignItems: string;
-  justifyContent: string;
-  height: string;
-  backgroundImage: string;
-  backgroundSize: string;
-  backgroundPosition: string;
+  display?: string;
+  alignItems?: string;
+  justifyContent?: string;
+  height?: string;
+  backgroundImage?: string;
+  backgroundSize?: string;
+  backgroundPosition?: string;
 }
 
 export interface ContainerInputProps {

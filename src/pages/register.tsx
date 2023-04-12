@@ -5,13 +5,13 @@ import { FaEye } from "react-icons/fa";
 import { PasswordRecoverButton, PasswordRevealButton, PrimaryButton } from "@/components/Buttons/button";
 import { InputLogin } from "@/components/Forms/primaryInput";
 import { PrimaryLogo } from "@/components/Logo/primaryLogo";
-import { ContainerImage, ContainerInput } from "@/components/Container/primaryContainer";
-import { PimaryBox } from "@/components/Box/primaryBox";
 import Link from "next/link";
 import { SubTitleH3 } from "@/components/Titles/primaryTitles";
 import { StyledSelect } from "@/components/Select/PrimarySelect";
 import { useUserRegister } from "@/hooks/useUserRegister";
 import { userInterface } from "@/interfaces/userInterface";
+import { ContainerImage } from "@/components/container/PrimaryContainer";
+import { PimaryBox } from "@/components/Box/PrimaryBox";
 
 const FormContainer = styled.form`
   display: flex;
