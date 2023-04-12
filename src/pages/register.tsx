@@ -10,6 +10,8 @@ import { PimaryBox } from "@/components/Box/primaryBox";
 import Link from "next/link";
 import { SubTitleH3 } from "@/components/Titles/primaryTitles";
 import { StyledSelect } from "@/components/Select/PrimarySelect";
+import { useUserRegister } from "@/hooks/useUserRegister";
+import { userInterface } from "@/interfaces/userInterface";
 
 const FormContainer = styled.form`
   display: flex;
@@ -43,13 +45,31 @@ export default function Register() {
     // TODO: Implementar a lógica de cadastro do usuário aqui
   };
 
+  const handleRegister = (event: { preventDefault: () => void; }) => {
+    event.preventDefault();
+    const user: userInterface = {
+      name: name,
+      password: password,
+      cpf: cpf,
+      cellphone: cellphone,
+      typeId: 2
+    }
+    return useUserRegister(user)
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  }
+
   return (
     <ContainerImage backgroundImage="/images/homem-a-barba.jpg">
       <PimaryBox>
         <PrimaryLogo src="/images/logo.png" marginBottom="10px" />
         <SubTitleH3 fontSize="1.5rem">Cadastro de Usuário</SubTitleH3>
 
-        <FormContainer onSubmit={handleSubmit}>
+        <FormContainer onSubmit={handleRegister}>
           <InputLogin
             type="text"
             value={cpf}
@@ -68,7 +88,7 @@ export default function Register() {
               <FaEye />
             </PasswordRevealButton>
           </ContainerInput>
-          
+
           <InputLogin
             type="text"
             value={name}
@@ -88,8 +108,8 @@ export default function Register() {
             onChange={(event) => setUserType(event.target.value)}
           >
             <option value="">Selecione o tipo de usuário</option>
-            <option value="NORMAL">Normal</option>
-            <option value="ADMIN">Administrador</option>
+            <option value="0">Barbeiro</option>
+            <option value="1">Administrador</option>
           </StyledSelect>
 
           <PrimaryButton
@@ -103,9 +123,9 @@ export default function Register() {
         </FormContainer>
 
         <Link href={'/login'}>
-        <PasswordRecoverButton>
-          Possui uma conta? <br/>Faça login aqui.
-        </PasswordRecoverButton>
+          <PasswordRecoverButton>
+            Possui uma conta? <br />Faça login aqui.
+          </PasswordRecoverButton>
         </Link>
       </PimaryBox>
     </ContainerImage>
