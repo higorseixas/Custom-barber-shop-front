@@ -10,10 +10,10 @@ export interface ContainerProps {
 }
 
 export interface ContainerInputProps {
-  position: string;
-  marginBottom: string;
-  display: string;
-  alignItems: string;
-  flexDirection: string;
-  gap: string;
+  position?: string;
+  marginBottom?: string;
+  display?: string;
+  alignItems?: string;
+  flexDirection?: string;
+  gap?: string;
 }

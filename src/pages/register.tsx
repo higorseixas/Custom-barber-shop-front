@@ -10,8 +10,8 @@ import { SubTitleH3 } from "@/components/Titles/primaryTitles";
 import { StyledSelect } from "@/components/Select/PrimarySelect";
 import { useUserRegister } from "@/hooks/useUserRegister";
 import { userInterface } from "@/interfaces/userInterface";
-import { ContainerImage } from "@/components/container/PrimaryContainer";
-import { PimaryBox } from "@/components/Box/PrimaryBox";
+import { ContainerImage, ContainerInput } from "@/components/Container/primaryContainer";
+import { PimaryBox } from "@/components/Box/primaryBox";
 
 const FormContainer = styled.form`
   display: flex;
