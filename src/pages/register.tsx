@@ -39,12 +39,6 @@ export default function Register() {
 
   const toggleShowPassword = () => setShowPassword(!showPassword);
 
-  const handleSubmit = (event: { preventDefault: () => void; }) => {
-    event.preventDefault();
-
-    // TODO: Implementar a lógica de cadastro do usuário aqui
-  };
-
   const handleRegister = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
     const user: userInterface = {
@@ -52,7 +46,7 @@ export default function Register() {
       password: password,
       cpf: cpf,
       cellphone: cellphone,
-      typeId: 2
+      typeId: parseInt(userType),
     }
     return useUserRegister(user)
       .then((response) => {

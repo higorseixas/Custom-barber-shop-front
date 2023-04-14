@@ -1,19 +1,29 @@
+import React, { useContext } from "react";
+import Link from "next/link";
 import { useState } from "react";
-import React from "react";
 import { FaEye } from "react-icons/fa";
 import { PasswordRecoverButton, PasswordRevealButton, PrimaryButton } from "@/components/Buttons/button";
 import { InputLogin } from "@/components/Forms/primaryInput";
 import { PrimaryLogo } from "@/components/Logo/primaryLogo";
 import { ContainerImage, ContainerInput } from "@/components/Container/primaryContainer";
 import { PimaryBox } from "@/components/Box/primaryBox";
-import Link from "next/link";
+import { useForm } from "react-hook-form";
+import { AuthContext } from '../contexts/AuthContext'
 
 
 export default function Login() {
+  const { register, handleSubmit} = useForm();
+  const { signIn } = useContext( AuthContext )
+
+  async function handSignIn(data: any) {
+    await signIn(data) //Alerar para realizar um then com o retorno e ver se ha algum erro.
+  }
+
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const toggleShowPassword = () => setShowPassword(!showPassword);
+
   return (
     <ContainerImage backgroundImage="/images/homem-a-barba.jpg">
       <PimaryBox>
@@ -21,18 +31,25 @@ export default function Login() {
           src="/images/logo.png"
           marginBottom="10px"
         />
-        <InputLogin type="text" placeholder="Usuário" />
-        <ContainerInput>
-          <InputLogin
-            type={showPassword ? "text" : "password"}
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-            placeholder="Senha"
+        <form onSubmit={handleSubmit(handSignIn)}>
+          <InputLogin 
+            {...register('cpf')} 
+            type="text" 
+            placeholder="CPF" 
           />
-          <PasswordRevealButton onClick={toggleShowPassword}>
-            <FaEye />
-          </PasswordRevealButton>
-        </ContainerInput>
+          <ContainerInput>
+            <InputLogin
+              {...register('password')}
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              placeholder="Senha"
+            />
+            <PasswordRevealButton onClick={toggleShowPassword}>
+              <FaEye />
+            </PasswordRevealButton>
+          </ContainerInput>
+        </form>
         <Link href={'/recoverdPassword'}>
         <PasswordRecoverButton>Esqueceu a senha?</PasswordRecoverButton>
         </Link>
