@@ -1,17 +1,20 @@
-import { useState } from "react";
 import styled from "styled-components"
 import React from "react";
+import Link from "next/link";
+import { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { PasswordRecoverButton, PasswordRevealButton, PrimaryButton } from "@/components/Buttons/button";
 import { InputLogin } from "@/components/Forms/primaryInput";
 import { PrimaryLogo } from "@/components/Logo/primaryLogo";
-import Link from "next/link";
 import { SubTitleH3 } from "@/components/Titles/primaryTitles";
 import { StyledSelect } from "@/components/Select/PrimarySelect";
-import { useUserRegister } from "@/hooks/useUserRegister";
+import { UserRegister } from "@/hooks/useUserRegister";
 import { userInterface } from "@/interfaces/userInterface";
 import { ContainerImage, ContainerInput } from "@/components/Container/primaryContainer";
 import { PimaryBox } from "@/components/Box/primaryBox";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useRouter } from "next/router";
+import { ErrorMessage } from "@/components/ErrorMessage/errorMessage";
 
 const FormContainer = styled.form`
   display: flex;
@@ -29,81 +32,78 @@ const FormContainer = styled.form`
 `;
 
 export default function Register() {
-  const [cpf, setCpf] = useState("");
+  const { register, handleSubmit } = useForm<userInterface>();
+  const router = useRouter();
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [cellphone, setCellphone] = useState("");
-  const [userType, setUserType] = useState("");
-
   const [showPassword, setShowPassword] = useState(false);
+
+  const [error, setError] = useState<string>('');
 
   const toggleShowPassword = () => setShowPassword(!showPassword);
 
-  const handleRegister = (event: { preventDefault: () => void; }) => {
-    event.preventDefault();
-    const user: userInterface = {
-      name: name,
-      password: password,
-      cpf: cpf,
-      cellphone: cellphone,
-      typeId: parseInt(userType),
-    }
-    return useUserRegister(user)
+  const onSubmit: SubmitHandler<userInterface> = (data) => {
+    UserRegister(data)
       .then((response) => {
-        console.log(response)
+        console.log(response);
+        if (response) {
+          router.push('/login');
+        } else {
+          setError('Erro ao criar usuário');
+        }
       })
       .catch((error) => {
-        console.error(error)
-      })
-  }
+        console.error(error);
+        setError('Erro ao criar usuário');
+      });
+  };
 
   return (
     <ContainerImage backgroundImage="/images/homem-a-barba.jpg">
+      {error && <ErrorMessage>{error}</ErrorMessage>}
       <PimaryBox>
         <PrimaryLogo src="/images/logo.png" marginBottom="10px" />
         <SubTitleH3 fontSize="1.5rem">Cadastro de Usuário</SubTitleH3>
 
-        <FormContainer onSubmit={handleRegister}>
+        <FormContainer onSubmit={handleSubmit(onSubmit)}>
           <InputLogin
+            {...register('cpf')}
+            name="cpf"
             type="text"
-            value={cpf}
-            onChange={(event) => setCpf(event.target.value)}
             placeholder="CPF"
           />
 
           <ContainerInput>
             <InputLogin
+              {...register('password')}
+              name="password"
               type={showPassword ? "text" : "password"}
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               placeholder="Senha"
             />
-            <PasswordRevealButton onClick={toggleShowPassword}>
+            <PasswordRevealButton type="button" onClick={toggleShowPassword}>
               <FaEye />
             </PasswordRevealButton>
           </ContainerInput>
 
           <InputLogin
+            {...register('name')}
+            name="name"
             type="text"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
             placeholder="Nome completo"
           />
 
           <InputLogin
+            {...register('cellphone')}
+            name="cellphone"
             type="text"
-            value={cellphone}
-            onChange={(event) => setCellphone(event.target.value)}
             placeholder="Telefone"
           />
 
-          <StyledSelect
-            value={userType}
-            onChange={(event) => setUserType(event.target.value)}
-          >
+          <StyledSelect {...register('typeId')} name="typeId">
             <option value="">Selecione o tipo de usuário</option>
-            <option value="0">Barbeiro</option>
-            <option value="1">Administrador</option>
+            <option value={1}>Barbeiro</option>
+            <option value={2}>Administrador</option>
           </StyledSelect>
 
           <PrimaryButton

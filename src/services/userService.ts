@@ -4,12 +4,11 @@ import { userInterface } from "@/interfaces/userInterface";
 export async function userRegister(user: userInterface) {
     return await customBackAPI
         .post('/user/createUser', user)
-            .then((response) => {
-                const userJWT = response.data
-                console.log(userJWT)
-            })
-            .catch((error) =>{
-                console.error(error)
-            })
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) =>{
+            throw new Error('Erro ao criar usuário', error);
+        })
 
 }
