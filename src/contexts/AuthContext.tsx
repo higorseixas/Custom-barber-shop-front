@@ -16,20 +16,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const isAuthenticated = !!user;
 
-  useEffect(() => {
-    const { 'nextauth-token': token } = parseCookies()
-
-    if (token) {
-      GetUserFromToken(token).then(((response: { user: SetStateAction<userInterface | null>; }) => 
-        setUser(response.user)))
-    }
-  })
+  // async function fetchUser() {
+  //   const { 'nextauth-token': token } = parseCookies();
+  //   if (token) {
+  //     const response = await GetUserFromToken(token);
+  //     setUser(response.user);
+  //   }
+  // }
+  
+  // useEffect(() => {
+  //   fetchUser();
+  // }, []);
 
   async function signIn({ cpf, password }: SignInData) {
     const { user, token } = await SignInUser({ cpf, password });
 
     setCookie(undefined, 'nextauth-token', token, {
-      maxAge: 60*60*1,  // 1 hour
+      maxAge: 7 * 24 * 60 * 60,  // 7 dias em segundos
     })
 
     customBackAPI.defaults.headers['Authorization'] = `Bearer ${token}`;

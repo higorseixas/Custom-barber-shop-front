@@ -1,5 +1,4 @@
 import axios from "axios";
-import { ApiError } from "next/dist/server/api-utils";
 import { parseCookies } from "nookies";
 
 const { 'nextauth-token': token } = parseCookies()

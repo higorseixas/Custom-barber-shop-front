@@ -16,7 +16,8 @@ export default function Login() {
   const { signIn } = useContext( AuthContext )
 
   async function handSignIn(data: any) {
-    await signIn(data) //Alerar para realizar um then com o retorno e ver se ha algum erro.
+    const signInData = { ...data, password };
+    await signIn(signInData) //Alerar para realizar um then com o retorno e ver se ha algum erro.
   }
 
   const [password, setPassword] = useState("");
@@ -34,32 +35,34 @@ export default function Login() {
         <form onSubmit={handleSubmit(handSignIn)}>
           <InputLogin 
             {...register('cpf')} 
+            name="cpf"
             type="text" 
             placeholder="CPF" 
           />
           <ContainerInput>
             <InputLogin
               {...register('password')}
+              name="password"
               type={showPassword ? "text" : "password"}
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               placeholder="Senha"
             />
-            <PasswordRevealButton onClick={toggleShowPassword}>
+            <PasswordRevealButton type="button" onClick={toggleShowPassword}>
               <FaEye />
             </PasswordRevealButton>
           </ContainerInput>
+          <PrimaryButton 
+            width="100%"
+            marginBottom="10px" 
+            backgroundColor="#4CAF50"
+          >
+            Login
+          </PrimaryButton>
         </form>
         <Link href={'/recoverdPassword'}>
         <PasswordRecoverButton>Esqueceu a senha?</PasswordRecoverButton>
         </Link>
-        <PrimaryButton 
-          width="100%"
-          marginBottom="10px" 
-          backgroundColor="#4CAF50"
-        >
-          Login
-        </PrimaryButton>
         <Link href={'/register'}>
         <PasswordRecoverButton>Cadastrar-se</PasswordRecoverButton>
         </Link>

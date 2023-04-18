@@ -11,7 +11,6 @@ export async function signInUser(signinData: SignInData): Promise<{ user: userIn
         return { user, token };
       })
       .catch((error) => {
-        console.error(error);
         throw new Error('Erro ao fazer login');
       });
-  }
+}
