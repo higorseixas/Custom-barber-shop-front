@@ -8,3 +8,8 @@ export const SubTitleH3 = styled.h3<TitleProps>`
   margin-left: ${(props) => props.marginLeft || 'unset'};
   margin-bottom: ${(props) => props.marginBottom || '1rem'};
 `;
+
+export const SubTitleSideBarH3 = styled.h3<TitleProps>`
+  font-size: ${(props) => props.fontSize || '18px'};
+  margin: ${(props) => props.margin || 'unset'};
+`;

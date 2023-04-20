@@ -5,12 +5,13 @@ export async function getUserFromToken(token: string) {
         .get('/user/getUserFromToken', {
             headers: {
                 Authorization: `Bearer ${token}`
-            }
+            },
         })
         .then((response) => {
-           return response.data
+            console.log('estou AQQQKKIM',response)
+            return response.data
         })
         .catch((error) =>{
-            console.error(error)
+            console.error("Errei aq ",error)
         })
 }

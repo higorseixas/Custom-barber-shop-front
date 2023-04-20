@@ -1,0 +1,8 @@
+export {default as ConfigIncon} from "./ConfigIncon.svg"
+export {default as HamburgerIcon} from "./HamburgerIcon.svg"
+export {default as LeftSidearrowIncon} from "./LeftSidearrowIncon.svg"
+export {default as MenuDashboardIcon} from "./MenuDashboardIcon.svg"
+export {default as PaymentIcon} from "./PaymentIcon.svg"
+export {default as CalenderIcon} from "./CalenderIcon.svg"
+export {default as ClientIcon} from "./ClientIcon.svg"
+export {default as ServicesIcon} from "./ServicesIcon.svg"

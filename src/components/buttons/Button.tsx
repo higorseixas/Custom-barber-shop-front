@@ -58,3 +58,20 @@ export const PasswordRecoverButton = styled.button<PasswordRecoverButtonProps>`
     text-decoration: ${(props) => props.textDecoration || "underline"};
   }
 `;
+
+export const SideBarButton = styled.button`
+  position: absolute;
+  right: 0;
+  top: 33rem;
+  border: none;
+  background-color: #fff;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform: translateX(50%);
+`;
