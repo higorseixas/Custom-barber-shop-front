@@ -1,3 +1,5 @@
+'use client';
+
 import styled from 'styled-components'
 import { iconInterface } from '@/interfaces/iconInterface';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

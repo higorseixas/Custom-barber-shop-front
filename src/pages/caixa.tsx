@@ -4,7 +4,7 @@ export default function dashboard() {
 
   return (
     <BaseLayout> 
-      teste 1
+      Teste 2
     </BaseLayout>
   );
 };
