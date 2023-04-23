@@ -169,7 +169,7 @@ export default function Sidebar() {
           >
             <NavItemIcon Collapsed={isCollapsed}>{item.icon}</NavItemIcon>
             {!isCollapsed && (
-              <SubTitleSideBarH3 >{item.name}</SubTitleSideBarH3>
+              <SubTitleSideBarH3>{item.name}</SubTitleSideBarH3>
             )}
           </NavItem>
         </Link>

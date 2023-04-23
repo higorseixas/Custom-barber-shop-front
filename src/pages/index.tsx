@@ -2,11 +2,6 @@ import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { Layout } from '../components/Layout/layout'
 
-export const GlobalStyle = createGlobalStyle`
-  body {
-    font-family: 'Montserrat',sans-serif;
-  }
-`
 const scrollToSection = (mySection: any) => {
   const section = document.querySelector(mySection)
     section.scrollIntoView({ behavior: 'smooth' });
@@ -227,7 +222,6 @@ const Line = styled.hr`
 export default function Home() {
   return (
     <Layout>
-      <GlobalStyle />
       <Section>
         <h1>CUSTOM BARBEARIA</h1>
         <ContentContainer>
