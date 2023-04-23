@@ -10,6 +10,7 @@ export const SubTitleH3 = styled.h3<TitleProps>`
 `;
 
 export const SubTitleSideBarH3 = styled.h3<TitleProps>`
+  font-weight:${(props) => props.fontWeight || 'bold'};
   font-size: ${(props) => props.fontSize || '18px'};
   margin: ${(props) => props.margin || 'unset'};
 `;

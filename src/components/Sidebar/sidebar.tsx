@@ -25,7 +25,7 @@ const SidebarContainer = styled.div<{ Collapsed: boolean }>`
 `;
 
 const Line = styled.hr`
-  margin: 20px 0;
+  margin: 10px 0;
   border: 0;
   height: 1px;
   background-color: #ccc;
@@ -121,7 +121,7 @@ export default function Sidebar() {
             }}/>,
     },
     {
-      name: "Produtos & Serviços",
+      name: "Produtos &\n Serviços",
       href: "/produtosEServiços",
       icon: <ServicesIcon style={{
               marginRight:"10px", 
@@ -169,7 +169,7 @@ export default function Sidebar() {
           >
             <NavItemIcon Collapsed={isCollapsed}>{item.icon}</NavItemIcon>
             {!isCollapsed && (
-              <SubTitleSideBarH3>{item.name}</SubTitleSideBarH3>
+              <SubTitleSideBarH3 >{item.name}</SubTitleSideBarH3>
             )}
           </NavItem>
         </Link>

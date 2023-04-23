@@ -1,5 +1,5 @@
 import { ISidebarProps } from '@/interfaces/iSidebarProps';
-import React, { useState, createContext, ReactNode, useContext } from 'react';
+import React, { useState, createContext, ReactNode } from 'react';
 
 
 export const SidebarContext = createContext<ISidebarProps>({
