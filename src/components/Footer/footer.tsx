@@ -5,11 +5,6 @@ import { iconInterface } from "@/interfaces/iconInterface";
 import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { PrimaryLogo } from "../Logo/primaryLogo";
 
-export const GlobalStyle = createGlobalStyle`
-  body {
-    font-family: 'Montserrat',sans-serif;
-  }
-`
 const Icon = ({ icon }: iconInterface) => {
   return <FontAwesomeIcon icon={icon} />;
 };
@@ -136,7 +131,6 @@ const SocialIcon = styled(FontAwesomeIcon)`
 export const Footer = () =>{
   return(
       <FooterContainer>
-      <GlobalStyle />
       <FooterContent>
         <PrimaryLogo 
           src="/images/logo.png" 
