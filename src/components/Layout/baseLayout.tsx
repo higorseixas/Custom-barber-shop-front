@@ -1,4 +1,3 @@
-import { SidebarProvider } from "@/contexts/SidebarContext";
 import { ReactNode } from "react";
 import styled from "styled-components";
 import Sidebar from "../Sidebar/sidebar";
@@ -12,7 +11,6 @@ const Dashboard = styled.div`
   overflow: hidden;
 `;
 
-
 const Content = styled.div`
   flex-grow: 1;
   width: inherit;
@@ -21,13 +19,11 @@ const Content = styled.div`
 
 export default function BaseLayout({ children }: { children: ReactNode }) {
   return (
-    <SidebarProvider>
-      <Dashboard>
-        <Sidebar />
-        <Content>
-          {children}
-        </Content>
-      </Dashboard>
-    </SidebarProvider>
+    <Dashboard>
+      <Sidebar />
+      <Content>
+        {children}
+      </Content>
+    </Dashboard>
   );
 };
