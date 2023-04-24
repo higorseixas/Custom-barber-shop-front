@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import customBackAPI from '@/connectors/customBackAPI'
-import { GetUserFromTokenInterface } from '@/interfaces/getUserFromTokenInterface'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 function checkNecessaryEnvVariables() {

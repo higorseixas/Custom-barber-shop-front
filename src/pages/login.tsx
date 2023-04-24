@@ -7,10 +7,12 @@ import { InputLogin } from "@/components/Forms/primaryInput";
 import { PrimaryLogo } from "@/components/Logo/primaryLogo";
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../contexts/AuthContext'
-import { useGetUserFromToken } from "@/hooks/getUserFromToken";
+import { ContainerImage, ContainerInput } from "@/components/Container/primaryContainer";
+import { PimaryBox } from "@/components/Box/primaryBox";
+import { SignInData } from "@/interfaces/signInData";
+import { useSignInUserHook } from "@/hooks/SignInUserHook";
 import { GetUserFromTokenInterface } from "@/interfaces/getUserFromTokenInterface";
-import { PimaryBox } from "@/components/Box/PrimaryBox";
-import { ContainerImage, ContainerInput } from "@/components/container/PrimaryContainer";
+import { useGetUserFromTokenHook } from "@/hooks/GetUserFromTokenHook";
 
 
 export default function Login() {
@@ -20,13 +22,6 @@ export default function Login() {
   async function handSignIn(data: any) {
     const signInData = { ...data, password };
     await signIn(signInData) //Alerar para realizar um then com o retorno e ver se ha algum erro.
-  }
-
-  const teste = async () => {
-    const user: GetUserFromTokenInterface = {
-      token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VydHlwZSI6Miwic3ViIjoxMCwiaWF0IjoxNjgyMjk1NjE3LCJleHAiOjE2ODIzODIwMTd9.AsXHb6ZmzxGS2nDThBMePwwfHDJpb2-J5QalB9ZFAS8"
-    }
-    useGetUserFromToken(user)
   }
 
   const [password, setPassword] = useState("");
@@ -41,7 +36,7 @@ export default function Login() {
           src="/images/logo.png"
           marginBottom="10px"
         />
-        <form onSubmit={handleSubmit(teste)}>
+        <form onSubmit={handleSubmit(handSignIn)}>
           <InputLogin
             {...register('cpf')}
             name="cpf"

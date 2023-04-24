@@ -1,13 +1,11 @@
 import customBackAPI from "@/connectors/customBackAPI";
 import Router from "next/router";
-import { SignInUser } from "@/hooks/signInUser";
+import { useSignInUserHook } from "@/hooks/SignInUserHook";
 import { AuthContextType } from "@/interfaces/authContextType";
 import { userInterface } from "@/interfaces/userInterface";
 import { parseCookies, setCookie } from "nookies";
 import { createContext, ReactNode, SetStateAction, useEffect, useState } from "react";
 import { SignInData } from "@/interfaces/signInData";
-import { GetUserFromToken } from "@/hooks/getUserFromToken";
-
 
 export const AuthContext = createContext({} as AuthContextType);
 
@@ -19,8 +17,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // async function fetchUser() {
   //   const { 'nextauth-token': token } = parseCookies();
   //   if (token) {
-  //     const response = await GetUserFromToken(token);
-  //     setUser(response.user);
+  //     const jsonResponseUser = await GetUserFromToken(token);
+  //     const dataUser = await jsonResponseUser.json();
+  //     const {user} = JSON.parse(dataToken.response);
+  //     setUser(user);
   //   }
   // }
   
@@ -29,13 +29,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // }, []);
 
   async function signIn({ cpf, password }: SignInData) {
-    const { user, token } = await SignInUser({ cpf, password });
+    const jsonResponse = await useSignInUserHook({ cpf, password });
+    const data = await jsonResponse.json();
+    const {user, token} = JSON.parse(data.response);
 
-    setCookie(undefined, 'nextauth-token', token, {
+    setCookie(undefined, 'nextauth.token', token, {
       maxAge: 7 * 24 * 60 * 60,  // 7 dias em segundos
     })
 
-    customBackAPI.defaults.headers['Authorization'] = `Bearer ${token}`;
+    // customBackAPI.defaults.headers['Authorization'] = `Bearer ${token}`;
 
     setUser(user)
 
