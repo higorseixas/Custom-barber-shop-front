@@ -8,7 +8,7 @@ import { InputLogin } from "@/components/Forms/primaryInput";
 import { PrimaryLogo } from "@/components/Logo/primaryLogo";
 import { SubTitleH3 } from "@/components/Titles/primaryTitles";
 import { StyledSelect } from "@/components/Select/PrimarySelect";
-import { UserRegister } from "@/hooks/useUserRegister";
+import { useUserRegister } from "@/hooks/UserRegisterHook";
 import { userInterface } from "@/interfaces/userInterface";
 import { ContainerImage, ContainerInput } from "@/components/Container/primaryContainer";
 import { PimaryBox } from "@/components/Box/primaryBox";
@@ -42,14 +42,11 @@ export default function Register() {
   const toggleShowPassword = () => setShowPassword(!showPassword);
 
   const onSubmit: SubmitHandler<userInterface> = (data) => {
-    UserRegister(data)
+    useUserRegister(data)
       .then((response) => {
-        console.log(response);
-        if (response) {
-          router.push('/login');
-        } else {
-          setError('Erro ao criar usuário');
-        }
+        response.ok && response.status >= 200 && response.status < 300
+        ? router.push('/login')
+        : setError('Erro ao criar usuário');
       })
       .catch((error) => {
         console.error(error);
