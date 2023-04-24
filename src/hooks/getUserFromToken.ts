@@ -1,5 +1,12 @@
-import { getUserFromToken } from "@/services/getUserFromTokenService"
+import { GetUserFromTokenInterface } from "@/interfaces/getUserFromTokenInterface"
 
-export const GetUserFromToken = async (token: string) => {
-    return await getUserFromToken(token)
+export const useGetUserFromToken = async (userInfo: GetUserFromTokenInterface) => {
+	return await fetch('api/getUserFromToken', {
+		method: 'GET',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+            Authorization: `Bearer ${userInfo.token}`
+		}
+	})
 }
