@@ -15,9 +15,9 @@ export default function Login() {
   const { register, handleSubmit } = useForm();
   const { signIn } = useContext(AuthContext)
 
-  async function handSignIn(data: any) {
+  const handSignIn = async (data: any) => {
     const signInData = { ...data, password };
-    await signIn(signInData) //Alerar para realizar um then com o retorno e ver se ha algum erro.
+    await signIn(signInData); //Alert to perform a 'then' with the return and check for any errors.
   }
 
   const [password, setPassword] = useState("");
