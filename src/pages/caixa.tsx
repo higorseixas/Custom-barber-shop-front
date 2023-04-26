@@ -1,10 +1,10 @@
 import BaseLayout from "@/components/Layout/baseLayout";
 
-export default function dashboard() {
+export default function Caixa() {
 
   return (
-    <BaseLayout> 
-      Teste 2
-    </BaseLayout>
+    // <BaseLayout> 
+    <h1>Caixa 2</h1>
+    // </BaseLayout>
   );
 };
