@@ -1,12 +1,15 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 import { SidebarContext } from '@/contexts/SidebarContext';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { SideBarButton } from '../Buttons/button';
 import { PrimaryLogo } from '../Logo/primaryLogo';
-import { CalenderIcon, ClientIcon, ConfigIncon, LeftSidearrowIncon, MenuDashboardIcon, PaymentIcon, ServicesIcon } from '../Svgs';
+import { LeftSidearrowIncon } from '../Svgs';
 import { SubTitleSideBarH3 } from '../Titles/primaryTitles';
+import {BrowserRouter as Router, Routes, Route, Link, useLocation} from 'react-router-dom';
+import CaixaPage from '@/pages/caixaPage';
+import App from '@/pages';
+import { sidebarData } from './sidebarData';
 
 
 const SidebarContainer = styled.div<{ Collapsed: boolean }>`
@@ -83,102 +86,54 @@ export default function Sidebar() {
   const router = useRouter();
   const { isCollapsed, toggleSidebarcollapse } = useContext(SidebarContext);
 
-  const sidebarItems = [
-    {
-      name: "Home",
-      href: "/dashboard",
-      icon: <MenuDashboardIcon style={{
-              marginRight:"10px", 
-              height:"30px", 
-              width: "30px" 
-            }}/>,
-    },
-    {
-      name: "Caixa",
-      href: "/caixa",
-      icon: <PaymentIcon style={{
-              marginRight:"10px", 
-              height:"30px", 
-              width: "30px" 
-            }}/>,
-    },
-    {
-      name: "Agendamento",
-      href: "/agendamento",
-      icon: <CalenderIcon style={{
-              marginRight:"10px", 
-              height:"30px", 
-              width: "30px" 
-            }}/>,
-    },
-    {
-      name: "Clientes",
-      href: "/clientes",
-      icon: <ClientIcon style={{
-              marginRight:"10px", 
-              height:"30px", 
-              width: "30px" 
-            }}/>,
-    },
-    {
-      name: "Produtos &\n Serviços",
-      href: "/produtosEServiços",
-      icon: <ServicesIcon style={{
-              marginRight:"10px", 
-              height:"30px", 
-              width: "30px" 
-            }}/>,
-    },
-    {
-      name: "Configurações",
-      href: "/configurações",
-      icon: <ConfigIncon style={{
-              marginRight:"10px", 
-              height:"30px", 
-              width: "30px" 
-            }}/>,
-    },
-  ];
-
   return (
-    <SidebarContainer Collapsed={isCollapsed}>
-      <SideBarButton onClick={toggleSidebarcollapse}>
-        {!isCollapsed ? <LeftSidearrowIncon style={{transform: "scaleX(-1)"}} /> : <LeftSidearrowIncon/>}
-      </SideBarButton>
-      <NavContainer>
-        <LogoContainer>
-          <PrimaryLogo 
-              src="/images/logo.png"
-              width="60px"
-              height="60px"
-            />
-        </LogoContainer>
-        <Line/>
-        {sidebarItems.map((item) => (
-          <Link
-          style={{ textDecoration: "none", color: "inherit" }}
-          href={item.href}
-          key={item.name}
-        >
-          <NavItem
-            Collapsed={isCollapsed}
-            style={{
-              backgroundColor:
-                router.pathname === item.href ? "#10b981" : "",
-            }}
-          >
-            <NavItemIcon Collapsed={isCollapsed}>{item.icon}</NavItemIcon>
-            {!isCollapsed && (
-              <SubTitleSideBarH3>{item.name}</SubTitleSideBarH3>
-            )}
-          </NavItem>
-        </Link>
-        ))}
-      </NavContainer>
-      <UserContainer>
-        <UserAvatar src="/images/logo.png" alt="User Avatar" />
-        {!isCollapsed && <SubTitleSideBarH3>John Doe</SubTitleSideBarH3>}
-      </UserContainer>
-    </SidebarContainer>
+    <Router>
+      <SidebarContainer Collapsed={isCollapsed}>
+        <SideBarButton onClick={toggleSidebarcollapse}>
+          {!isCollapsed ? <LeftSidearrowIncon style={{transform: "scaleX(-1)"}} /> : <LeftSidearrowIncon/>}
+        </SideBarButton>
+        <NavContainer>
+          <LogoContainer>
+            <PrimaryLogo 
+                src="/images/logo.png"
+                width="60px"
+                height="60px"
+                />
+          </LogoContainer>
+          <Line/>
+          {sidebarData.map((item) => (
+            <Link
+            style={{ textDecoration: "none", color: "inherit" }}
+            to={item.path}
+            key={item.name}
+            >
+            <NavItem
+              Collapsed={isCollapsed}
+              style={{
+                backgroundColor:
+                location.pathname === item.path ? "#10b981" : "",
+              }}
+              >
+              <NavItemIcon Collapsed={isCollapsed}>{item.icon}</NavItemIcon>
+              {!isCollapsed && (
+                <SubTitleSideBarH3>{item.name}</SubTitleSideBarH3>
+                )}
+            </NavItem>
+          </Link>
+          ))}
+        </NavContainer>
+        {/* <Routes>
+          <Route path="/" element={<App/>}>
+            <Route path="/caixaPage" element={<CaixaPage/>} />
+          </Route>
+          <Route path="/agendamentosPage" element={<h1>Topics</h1>} />
+          <Route path="/" element={<h1>Home</h1>} />
+        </Routes> */}
+        <UserContainer>
+          <UserAvatar src="/images/logo.png" alt="User Avatar" />
+          {!isCollapsed && <SubTitleSideBarH3>John Doe</SubTitleSideBarH3>}
+        </UserContainer>
+      </SidebarContainer>
+    </Router>
   );
 }
