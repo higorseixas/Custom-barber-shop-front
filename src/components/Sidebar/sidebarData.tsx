@@ -46,7 +46,7 @@ export const SidebarData = [
     }} />,
   },
   {
-    name: "Produtos &\n Serviços",
+    name: "Serviços",
     href: "produtosEServiços",
     icon: <ServicesIcon style={{
       marginRight: "10px",

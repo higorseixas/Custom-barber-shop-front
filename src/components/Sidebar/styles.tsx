@@ -4,7 +4,7 @@ export const SidebarContainer = styled.div<{ Collapsed: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: ${({ Collapsed }) => (Collapsed ? "50px" : "200px")};
+  width: ${({ Collapsed }) => (Collapsed ? "50px" : "220px")};
   height: 100vh;
   background-color: #f2f2f2;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);

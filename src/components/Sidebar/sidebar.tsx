@@ -1,19 +1,25 @@
-import styled from 'styled-components';
-import Link from 'next/link';
 import { SidebarContext } from '@/contexts/SidebarContext';
-import { useRouter } from 'next/router';
 import { useContext } from 'react';
-import { SideBarButton } from '../Buttons/button';
+import { SideBarButton, SideBarButtonNavigation } from '../Buttons/button';
 import { PrimaryLogo } from '../Logo/primaryLogo';
-import { CalenderIcon, ClientIcon, ConfigIncon, LeftSidearrowIncon, MenuDashboardIcon, PaymentIcon, ServicesIcon } from '../Svgs';
+import { LeftSidearrowIncon } from '../Svgs';
 import { SubTitleSideBarH3 } from '../Titles/primaryTitles';
-import { Line, LogoContainer, NavContainer, NavItem, NavItemIcon, SidebarContainer, UserAvatar, UserContainer } from './styles';
+import { 
+  Line, 
+  LogoContainer, 
+  NavContainer, 
+  NavItem, 
+  NavItemIcon, 
+  SidebarContainer, 
+  UserAvatar, 
+  UserContainer
+} from './styles';
 import { SidebarData } from './sidebarData';
 
 
 export default function Sidebar() {
-  const router = useRouter();
   const { isCollapsed, toggleSidebarcollapse, handleSelectedContent } = useContext(SidebarContext);
+  const { selectedContent } = useContext(SidebarContext);
 
   const handleChangeContent = (content: string) => {
     handleSelectedContent(content)
@@ -31,18 +37,17 @@ export default function Sidebar() {
             width="60px"
             height="60px"
           />
-        </LogoContainer>s
+        </LogoContainer>
         <Line />
         {SidebarData.map((item) => (
-          <button
-            style={{ textDecoration: "none", color: "inherit" }}
+          <SideBarButtonNavigation
             onClick={() => handleChangeContent(item.href)}
           >
             <NavItem
               Collapsed={isCollapsed}
               style={{
                 backgroundColor:
-                  router.pathname === item.href ? "#10b981" : "",
+                selectedContent === item.href ? "#10b981" : "",
               }}
             >
               <NavItemIcon Collapsed={isCollapsed}>{item.icon}</NavItemIcon>
@@ -50,7 +55,7 @@ export default function Sidebar() {
                 <SubTitleSideBarH3>{item.name}</SubTitleSideBarH3>
               )}
             </NavItem>
-          </button>
+          </SideBarButtonNavigation>
         ))}
       </NavContainer>
       <UserContainer>

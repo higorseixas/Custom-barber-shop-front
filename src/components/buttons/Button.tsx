@@ -59,6 +59,17 @@ export const PasswordRecoverButton = styled.button<PasswordRecoverButtonProps>`
   }
 `;
 
+export const SideBarButtonNavigation = styled.button`
+  background: none;
+  border: none;
+  border-radius: 50%;
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0;
+`;
+
 export const SideBarButton = styled.button`
   position: absolute;
   right: 0;
