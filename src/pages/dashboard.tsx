@@ -1,9 +1,9 @@
 import BaseLayout from "@/components/Layout/baseLayout";
 import { GetServerSideProps } from "next";
 import { parseCookies } from "nookies";
-import Caixa from "./caixa";
-import Agendamentos from "./agendamentos";
-import { useContext, useState } from "react";
+import Caixa from "../components/Caixa/caixa";
+import Agendamentos from "../components/Agendamentos/agendamentos";
+import { useContext } from "react";
 import { SidebarContext } from "@/contexts/SidebarContext";
 
 export default function Dashboard() {
