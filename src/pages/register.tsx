@@ -8,7 +8,7 @@ import { InputLogin } from "@/components/Forms/primaryInput";
 import { PrimaryLogo } from "@/components/Logo/primaryLogo";
 import { SubTitleH3 } from "@/components/Titles/primaryTitles";
 import { StyledSelect } from "@/components/Select/PrimarySelect";
-import { useUserRegister } from "@/hooks/UserRegisterHook";
+import { useUserRegister } from "@/hooks/useUserRegisterHook";
 import { userInterface } from "@/interfaces/userInterface";
 import { ContainerImage, ContainerInput } from "@/components/Container/primaryContainer";
 import { PimaryBox } from "@/components/Box/primaryBox";

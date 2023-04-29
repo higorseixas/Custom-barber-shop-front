@@ -1,6 +1,6 @@
 import customBackAPI from "@/connectors/customBackAPI";
 import Router from "next/router";
-import { useSignInUserHook } from "@/hooks/SignInUserHook";
+import { useSignInUserHook } from "@/hooks/useSignInUserHook";
 import { AuthContextType } from "@/interfaces/authContextType";
 import { userInterface } from "@/interfaces/userInterface";
 import { parseCookies, setCookie } from "nookies";

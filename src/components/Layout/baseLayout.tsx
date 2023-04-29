@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
-import Sidebar from "../Sidebar/sidebar";
+import Sidebar from "../Patterns/Sidebar";
 
 const Dashboard = styled.div`
   display: flex;

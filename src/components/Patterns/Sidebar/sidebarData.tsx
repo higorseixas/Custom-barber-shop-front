@@ -5,7 +5,7 @@ import {
   MenuDashboardIcon, 
   PaymentIcon,
   ServicesIcon 
-} from '../Svgs';
+} from '../../Svgs';
 
 
 export const SidebarData = [
