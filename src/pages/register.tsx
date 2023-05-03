@@ -63,7 +63,7 @@ export default function Register() {
 
         <FormContainer onSubmit={handleSubmit(onSubmit)}>
           <InputLogin
-            {...register('cpf')}
+            {...register('cpf', {required: true})}
             name="cpf"
             type="text"
             placeholder="CPF"
@@ -71,7 +71,7 @@ export default function Register() {
 
           <ContainerInput>
             <InputLogin
-              {...register('password')}
+              {...register('password', {required: true})}
               name="password"
               type={showPassword ? "text" : "password"}
               value={password}
@@ -84,7 +84,7 @@ export default function Register() {
           </ContainerInput>
 
           <InputLogin
-            {...register('name')}
+            {...register('name', {required: true})}
             name="name"
             type="text"
             placeholder="Nome completo"
@@ -97,7 +97,7 @@ export default function Register() {
             placeholder="Telefone"
           />
 
-          <StyledSelect {...register('typeId')} name="typeId">
+          <StyledSelect {...register('typeId', {required: true})} name="typeId">
             <option value="">Selecione o tipo de usuário</option>
             <option value={1}>Barbeiro</option>
             <option value={2}>Administrador</option>

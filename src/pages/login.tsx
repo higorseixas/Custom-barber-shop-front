@@ -34,14 +34,14 @@ export default function Login() {
         />
         <form onSubmit={handleSubmit(handSignIn)}>
           <InputLogin
-            {...register('cpf')}
+            {...register('cpf', {required: true})}
             name="cpf"
             type="text"
             placeholder="CPF"
           />
           <ContainerInput>
             <InputLogin
-              {...register('password')}
+              {...register('password', {required: true})}
               name="password"
               type={showPassword ? "text" : "password"}
               value={password}
