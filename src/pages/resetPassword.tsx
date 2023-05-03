@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import { FaEye } from "react-icons/fa";
-import { PasswordRecoverButton, PasswordRevealButton, PrimaryButton } from "@/components/Buttons/button";
+import { PasswordRevealButton, PrimaryButton } from "@/components/Buttons/button";
 import { InputLogin } from "@/components/Forms/primaryInput";
 import { PrimaryLogo } from "@/components/Logo/primaryLogo";
 import { ContainerImage, ContainerInput } from "@/components/Container/primaryContainer";
