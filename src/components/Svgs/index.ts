@@ -6,3 +6,6 @@ export {default as PaymentIcon} from "./PaymentIcon.svg"
 export {default as CalenderIcon} from "./CalenderIcon.svg"
 export {default as ClientIcon} from "./ClientIcon.svg"
 export {default as ServicesIcon} from "./ServicesIcon.svg"
+
+export {default as DeleteIconTable} from "./DeleteIconTable.svg"
+export {default as EditIconTable} from "./EditIconTable.svg"
