@@ -7,7 +7,6 @@ const Dashboard = styled.div`
   height: 100vh;
   width: -webkit-fill-available;
   position: relative;
-  background-color: gray;
   overflow: hidden;
 `;
 

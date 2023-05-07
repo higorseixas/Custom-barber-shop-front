@@ -78,7 +78,7 @@ export const SideBarButton = styled.button`
   background-color: #fff;
   width: 2rem;
   height: 2rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #505050;
   border-radius: 50%;
   display: flex;
   justify-content: center;

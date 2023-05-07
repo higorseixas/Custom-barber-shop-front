@@ -1,8 +1,9 @@
 import BaseLayout from "@/components/Layout/baseLayout";
 import { GetServerSideProps } from "next";
 import { parseCookies } from "nookies";
-import Caixa from "../templates/Caixa/caixa";
-import Agendamentos from "../templates/Agendamentos/agendamentos";
+import Caixa from "../templates/Caixa";
+import Agendamentos from "../templates/Agendamentos";
+import Services from "../templates/Services";
 import { useContext } from "react";
 import { SidebarContext } from "@/contexts/SidebarContext";
 
@@ -13,11 +14,11 @@ export default function Dashboard() {
     <BaseLayout>
       {selectedContent === 'caixa' ?
         (<Caixa />) :
-        selectedContent === 'agendamento' ?
-          (<Agendamentos />) :
-          selectedContent === 'clientes' ?
-            (<Agendamentos />) :
-            ''
+      selectedContent === 'agendamento' ?
+        (<Agendamentos />) :
+      selectedContent === 'services' ?
+        (<Services />) :
+        ''
       }
     </BaseLayout>
   );

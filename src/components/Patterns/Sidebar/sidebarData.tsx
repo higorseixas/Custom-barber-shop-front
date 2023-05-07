@@ -24,7 +24,8 @@ export const SidebarData = [
     icon: <PaymentIcon style={{
       marginRight: "10px",
       height: "30px",
-      width: "30px"
+      width: "30px",
+      color: "#fff"
     }} />,
   },
   {
@@ -47,7 +48,7 @@ export const SidebarData = [
   },
   {
     name: "Serviços",
-    href: "produtosEServiços",
+    href: "services",
     icon: <ServicesIcon style={{
       marginRight: "10px",
       height: "30px",
