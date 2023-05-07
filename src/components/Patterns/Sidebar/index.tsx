@@ -40,7 +40,7 @@ export default function Sidebar() {
         </LogoContainer>
         <Line />
         {SidebarData.map((item) => (
-          <SideBarButtonNavigation
+          <SideBarButtonNavigation key={item.name}
             onClick={() => handleChangeContent(item.href)}
           >
             <NavItem
