@@ -47,7 +47,7 @@ export default function Sidebar() {
               Collapsed={isCollapsed}
               style={{
                 backgroundColor:
-                selectedContent === item.href ? "#10b981" : "",
+                selectedContent === item.href ? "rgba(108, 99, 255, 0.7)" : "",
               }}
             >
               <NavItemIcon Collapsed={isCollapsed}>{item.icon}</NavItemIcon>

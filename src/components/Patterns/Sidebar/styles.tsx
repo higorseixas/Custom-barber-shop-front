@@ -6,7 +6,7 @@ export const SidebarContainer = styled.div<{ Collapsed: boolean }>`
   justify-content: space-between;
   width: ${({ Collapsed }) => (Collapsed ? "50px" : "220px")};
   height: 100vh;
-  background-color: #f2f2f2;
+  background-color: #000000;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
   position: relative;
 
@@ -39,12 +39,13 @@ export const NavItem = styled.div<{ Collapsed: boolean }>`
   align-items: center;
   padding: ${({ Collapsed }) => (Collapsed ? "10px" : "10px 20px")};
   /* padding: 10px; */
-  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
   margin-bottom: 10px;
   cursor: pointer;
 
   &:hover {
-    background-color: #ccc;
+    background-color: rgba(108, 99, 255, 0.7);
   }
 `;
 
