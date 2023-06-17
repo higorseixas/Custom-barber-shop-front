@@ -2,8 +2,8 @@
 
 import { faClock, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
-import { PrimaryButton } from '../../Buttons/button';
-import { PrimaryLogo } from '../../Logo/primaryLogo';
+import { PrimaryButton } from '../../buttons/Button';
+import { PrimaryLogo } from '../../logo/PrimaryLogo';
 import { NavbarButtonContainer, NavbarContainer, StyledIcon, VerticalLine } from './styles';
 
 

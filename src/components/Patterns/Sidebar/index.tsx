@@ -1,7 +1,7 @@
 import { SidebarContext } from '@/contexts/SidebarContext';
 import { useContext } from 'react';
-import { SideBarButton, SideBarButtonNavigation } from '../../Buttons/button';
-import { PrimaryLogo } from '../../Logo/primaryLogo';
+import { SideBarButton, SideBarButtonNavigation } from '../../buttons/Button';
+import { PrimaryLogo } from '../../logo/PrimaryLogo';
 import { LeftSidearrowIncon } from '../../Svgs';
 import { SubTitleSideBarH3 } from '../../Titles/primaryTitles';
 import { 
