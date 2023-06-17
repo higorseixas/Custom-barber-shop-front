@@ -1,6 +1,6 @@
 import { faLocationDot, faClock, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { PrimaryLogo } from "../../Logo/primaryLogo";
+import { PrimaryLogo } from "../../logo/PrimaryLogo";
 import { 
   Copyright,
   FooterContainer,
