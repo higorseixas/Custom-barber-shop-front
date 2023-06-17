@@ -2,19 +2,19 @@ import { SidebarContext } from '@/contexts/SidebarContext';
 import { useContext } from 'react';
 import { LeftSidearrowIncon } from '../../Svgs';
 import { SubTitleSideBarH3 } from '../../Titles/primaryTitles';
-import { 
-  Line, 
-  LogoContainer, 
-  NavContainer, 
-  NavItem, 
-  NavItemIcon, 
-  SidebarContainer, 
-  UserAvatar, 
+import {
+  Line,
+  LogoContainer,
+  NavContainer,
+  NavItem,
+  NavItemIcon,
+  SidebarContainer,
+  UserAvatar,
   UserContainer
 } from './styles';
 import { SidebarData } from './sidebarData';
-import { SideBarButton, SideBarButtonNavigation } from '@/components/Buttons/Button';
-import { PrimaryLogo } from '@/components/Logo/primaryLogo';
+import { SideBarButton, SideBarButtonNavigation } from '../../../components/buttons/Button';
+import { PrimaryLogo } from '../../../components/logo/PrimaryLogo';
 
 
 export default function Sidebar() {
@@ -53,7 +53,7 @@ export default function Sidebar() {
               Collapsed={isCollapsed || false}
               style={{
                 backgroundColor:
-                selectedContent === item.href ? "rgba(108, 99, 255, 0.7)" : "",
+                  selectedContent === item.href ? "rgba(108, 99, 255, 0.7)" : "none",
               }}
             >
               <NavItemIcon Collapsed={isCollapsed || false}>{item.icon}</NavItemIcon>
