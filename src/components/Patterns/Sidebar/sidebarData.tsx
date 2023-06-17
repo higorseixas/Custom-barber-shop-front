@@ -1,18 +1,16 @@
-import { 
-  CalenderIcon, 
-  ClientIcon, 
-  ConfigIncon, 
-  MenuDashboardIcon, 
-  PaymentIcon,
-  ServicesIcon 
-} from '../../Svgs';
-
+import HomeIcon from '@mui/icons-material/Home';
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import ContactsIcon from '@mui/icons-material/Contacts';
+import SettingsIcon from '@mui/icons-material/Settings';
+import ContentCutIcon from '@mui/icons-material/ContentCut';
 
 export const SidebarData = [
   {
     name: "Home",
     href: "dashboard",
-    icon: <MenuDashboardIcon style={{
+    icon: <HomeIcon style={{
+      color: 'white',
       marginRight: "10px",
       height: "30px",
       width: "30px"
@@ -21,7 +19,7 @@ export const SidebarData = [
   {
     name: "Caixa",
     href: "caixa",
-    icon: <PaymentIcon style={{
+    icon: <CurrencyExchangeIcon style={{
       marginRight: "10px",
       height: "30px",
       width: "30px",
@@ -31,7 +29,8 @@ export const SidebarData = [
   {
     name: "Agendamento",
     href: "agendamento",
-    icon: <CalenderIcon style={{
+    icon: <CalendarMonthIcon style={{
+      color: 'white',
       marginRight: "10px",
       height: "30px",
       width: "30px"
@@ -40,7 +39,8 @@ export const SidebarData = [
   {
     name: "Clientes",
     href: "clientes",
-    icon: <ClientIcon style={{
+    icon: <ContactsIcon style={{
+      color: 'white',
       marginRight: "10px",
       height: "30px",
       width: "30px"
@@ -49,7 +49,8 @@ export const SidebarData = [
   {
     name: "Serviços",
     href: "services",
-    icon: <ServicesIcon style={{
+    icon: <ContentCutIcon style={{
+      color: 'white',
       marginRight: "10px",
       height: "30px",
       width: "30px"
@@ -58,7 +59,8 @@ export const SidebarData = [
   {
     name: "Configurações",
     href: "configurações",
-    icon: <ConfigIncon style={{
+    icon: <SettingsIcon style={{
+      color: 'white',
       marginRight: "10px",
       height: "30px",
       width: "30px"
