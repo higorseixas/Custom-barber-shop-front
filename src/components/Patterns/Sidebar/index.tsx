@@ -1,7 +1,5 @@
 import { SidebarContext } from '@/contexts/SidebarContext';
 import { useContext } from 'react';
-import { SideBarButton, SideBarButtonNavigation } from '../../buttons/Button';
-import { PrimaryLogo } from '../../logo/PrimaryLogo';
 import { LeftSidearrowIncon } from '../../Svgs';
 import { SubTitleSideBarH3 } from '../../Titles/primaryTitles';
 import { 
@@ -15,6 +13,8 @@ import {
   UserContainer
 } from './styles';
 import { SidebarData } from './sidebarData';
+import { SideBarButton, SideBarButtonNavigation } from '@/components/Buttons/Button';
+import { PrimaryLogo } from '@/components/Logo/primaryLogo';
 
 
 export default function Sidebar() {
@@ -25,9 +25,15 @@ export default function Sidebar() {
     handleSelectedContent(content)
   }
 
+  const handleToggleSidebar = () => {
+    if (toggleSidebarcollapse) {
+      toggleSidebarcollapse();
+    }
+  }
+
   return (
-    <SidebarContainer Collapsed={isCollapsed}>
-      <SideBarButton onClick={toggleSidebarcollapse}>
+    <SidebarContainer Collapsed={isCollapsed || false}>
+      <SideBarButton onClick={handleToggleSidebar}>
         {!isCollapsed ? <LeftSidearrowIncon style={{ transform: "scaleX(-1)" }} /> : <LeftSidearrowIncon />}
       </SideBarButton>
       <NavContainer>
@@ -44,13 +50,13 @@ export default function Sidebar() {
             onClick={() => handleChangeContent(item.href)}
           >
             <NavItem
-              Collapsed={isCollapsed}
+              Collapsed={isCollapsed || false}
               style={{
                 backgroundColor:
                 selectedContent === item.href ? "rgba(108, 99, 255, 0.7)" : "",
               }}
             >
-              <NavItemIcon Collapsed={isCollapsed}>{item.icon}</NavItemIcon>
+              <NavItemIcon Collapsed={isCollapsed || false}>{item.icon}</NavItemIcon>
               {!isCollapsed && (
                 <SubTitleSideBarH3>{item.name}</SubTitleSideBarH3>
               )}

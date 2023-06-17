@@ -6,7 +6,8 @@ export const SidebarContext = createContext<ISidebarProps>({
   isCollapsed: false,
   setCollapse: () => { },
   selectedContent: '',
-  handleSelectedContent: () => { }
+  handleSelectedContent: () => {},
+  toggleSidebarcollapse: () => {},
 });
 
 export function SidebarProvider({ children }: { children: ReactNode }) {

@@ -1,7 +1,7 @@
 export interface ISidebarProps {
   isCollapsed?: boolean;
   setCollapse?: (collapsed: boolean) => void;
-  toggleSidebarcollapse?: (collapsed: boolean) => void;
-  selectedContent: string
+  toggleSidebarcollapse?: () => void;
+  selectedContent: string;
   handleSelectedContent: (contentName: string) => void;
 }
