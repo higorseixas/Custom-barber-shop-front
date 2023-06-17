@@ -1,15 +1,17 @@
-import Table from "@/components/Table/Index";
+import CustomTable from "../../components/table/index";
 
 export default function Services() {
-  const teste = [{ key: 'codigo', label: 'Código' }, { key: 'nome', label: 'Nome' }]
-  // usar o usseeffec r chamar o hoocjk que pega os produtoss
+  const headers = ['Nome', 'Idade', 'Email'];
+  const data = [
+    ['João', 25, 'joao@example.com'],
+    ['Maria', 30, 'maria@example.com'],
+    ['Pedro', 40, 'pedro@example.com'],
+  ];  
   return (
-  <Table 
-    items={[1]} 
-    headers={teste}
-    body
-  >
-      
-    </Table>
+    <CustomTable 
+      headers={headers}
+      data={data}
+      displayActions={false}
+    />
   );
 };

@@ -1,87 +1,59 @@
-import { DeleteIconTable, EditIconTable } from "../Svgs"
-import { 
-  SyledTable, 
-  SyledTableHeader, 
-  SyledTableBody, 
-  StyledTableCell,
-  StyledButton
-} from "./styles"
+import React from 'react';
+import styled from 'styled-components';
+import { TableContainer, TableHeader, TableRow, TableCell, ActionsCell, EditButton, DeleteButton } from './styles';
 
-interface TableProps<T> {
-  items: T[];
-  onItemSelect?: (item: T) => void;
-  onItemDelete?: (item: T) => void;
-  headers: { key: string; label: string }[];
-  renderRow: (item: T) => React.ReactNode;
+interface TableProps {
+  headers: string[];
+  data: any[][];
+  displayActions?: boolean;
+  handleEdit?: (rowIndex: number) => void;
+  handleDelete?: (rowIndex: number) => void;
 }
 
-export default function Table<T>(props: TableProps<T>) {
-
-  const { items, onItemSelect, onItemDelete, headers, renderRow } = props;
-  const displayActions = onItemDelete || onItemSelect;
-
-
-  function renderhHeader() {
-    return (
-      <tr>
-        {headers.map((header) => (
-          <th key={header.key}>{header.label}</th>
-        ))}
-        {displayActions ? <th>Ações</th> : false}
-      </tr>
-    )
-  }
-
-  function RenderData() {
-    return props.items?.map((cliente, i) => {
-      return (
-        <tr key={cliente.id}
-          className={`${i % 2 === 0 ? 'bg-purple-200' : 'bg-purple-100'}`}>
-          <th>{items.id}</th>
-          <th>{items.nome}</th>
-          <th>{items.idade}</th>
-          {displayActions ? renderAtion(items) : false}
-        </tr>
-      )
-    })
-  }
-
-  function renderAtion(cliente: Cliente) {
-    return (
-      <StyledTableCell>
-        {props.itemSelecionado && (
-          <StyledButton
-            onClick={() => props.itemSelecionado?.(cliente)}
-            color="#3B82F6"
-            backgroundColor="#D1FAE5"
-            hoverBackgroundColor="#A7F3D0"
-          >
-            <EditIconTable/>
-          </StyledButton>
-        )}
-        {props.itemExcluido && (
-          <StyledButton
-            onClick={() => props.itemExcluido?.(cliente)}
-            color="#EF4444"
-            backgroundColor="#FEE2E2"
-            hoverBackgroundColor="#FECACA"
-          >
-            <DeleteIconTable/>
-          </StyledButton>
-        )}
-      </StyledTableCell>
-    );
-  }
-
+const CustomTable: React.FC<TableProps> = ({
+  headers,
+  data,
+  displayActions = false,
+  handleEdit,
+  handleDelete,
+}) => {
+  const numColumns = headers.length
+  
   return (
-    <SyledTable>
-      <SyledTableHeader>
-        {renderhHeader()}
-      </SyledTableHeader>
+    <TableContainer>
+      <thead>
+        <tr>
+          {headers.map((header, index) => (
+            <TableHeader key={index}>{header}</TableHeader>
+          ))}
+          {displayActions && <TableHeader>Actions</TableHeader>}
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((row, rowIndex) => (
+          <TableRow key={rowIndex}>
+            {row.map((cell, cellIndex) => (
+              <TableCell key={cellIndex}>{cell}</TableCell>
+            ))}
+            {displayActions && (
+              <ActionsCell>
+                {handleEdit && (
+                  <EditButton onClick={() => handleEdit(rowIndex)}>
+                    Edit
+                  </EditButton>
+                )}
+                {handleDelete && (
+                  <DeleteButton onClick={() => handleDelete(rowIndex)}>
+                    Delete
+                  </DeleteButton>
+                )}
+              </ActionsCell>
+            )}
+          </TableRow>
+        ))}
+      </tbody>
+    </TableContainer>
+  );
+};
 
-      <SyledTableBody>
-        {RenderData()}
-      </SyledTableBody>
-    </SyledTable>
-  )
-}
+export default CustomTable;
