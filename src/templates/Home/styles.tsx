@@ -110,6 +110,13 @@ export const ServicesTitle = styled.h2`
   font-size: 3rem;
   margin-bottom: 1rem;
   color: white;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const ServicesBoxesContainer = styled.div`
@@ -126,17 +133,39 @@ export const ServicesBoxesContainer = styled.div`
 `;
 
 export const ServicesBox = styled.div`
+  max-width: 240px;
+  min-width: 240px;
   background-color: white;
   width: 20rem;
   height: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   margin: 1rem;
+
+  @media (max-width: 1200px) { 
+    max-width: 200px;
+    min-width: 200px;
+  }
+
+  @media (max-width: 980px) { 
+    max-width: 180px;
+    min-width: 180px;
+  }
+
+  @media (max-width: 860px) { 
+    max-width: 160px;
+    min-width: 160px;
+  }
+
+  @media (max-width: 768px) { 
+    max-width: 200px;
+    min-width: 200px;
+  }
 
   @media screen and (max-width: 768px) {
     width: 80%;
@@ -151,14 +180,34 @@ export const ServicesBox = styled.div`
 `;
 
 export const ServicesBoxTitle = styled.h3`
-  font-size: 2.1rem;
-  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+
+  @media (max-width: 1200px) { 
+    font-size: 1.4rem;
+  }
+
+  @media (max-width: 980px) { 
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) { 
+    font-size: 1rem;
+  }
 `;
 
 export const ServicesBoxText = styled.p`
-  font-size: 2.7rem;
+  font-size: 1.5rem;
   text-align: center;
   font-weight: bold;
+
+  @media (max-width: 980px) { 
+    font-size: 1.4rem;
+  }
+
+  @media (max-width: 768px) { 
+    font-size: 1.2rem;
+  }
 `;
 
 export const PlansContainer = styled.section`
