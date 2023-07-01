@@ -1,7 +1,7 @@
 import { faLocationDot, faClock, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { PrimaryLogo } from "../../logo/PrimaryLogo";
-import { 
+import {
   Copyright,
   FooterContainer,
   FooterContent,
@@ -9,23 +9,23 @@ import {
   HelpLink,
   InfoColumn,
   InfoItem,
-  InfoText, 
+  InfoText,
   Line,
-  SocialColumn, 
-  SocialContainer, 
+  SocialColumn,
+  SocialContainer,
   SocialIcon,
-  SocialLink, 
-  StyledIcon, 
-  Title 
+  SocialLink,
+  StyledIcon,
+  Title
 } from './styles';
 
 
-export const Footer = () =>{
-  return(
-      <FooterContainer>
+export const Footer = () => {
+  return (
+    <FooterContainer>
       <FooterContent>
-        <PrimaryLogo 
-          src="/images/logo.png" 
+        <PrimaryLogo
+          src="/images/logo.png"
           alt="Logo"
           height="200px"
           width="200px"
@@ -51,13 +51,13 @@ export const Footer = () =>{
           </ul>
           <ul>
             <InfoItem>
-              <StyledIcon icon={faClock}/>
+              <StyledIcon icon={faClock} />
               <InfoText>Seg - Sex: 8:00 - 18:00</InfoText>
             </InfoItem>
           </ul>
           <ul>
             <InfoItem>
-              <StyledIcon icon={faPhone}/>
+              <StyledIcon icon={faPhone} />
               <InfoText>(43 9999-999)</InfoText>
             </InfoItem>
           </ul>
