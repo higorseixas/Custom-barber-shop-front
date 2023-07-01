@@ -1,12 +1,10 @@
-import React from "react";
-import styled, { createGlobalStyle } from "styled-components";
-
+import styled from "styled-components";
 
 export const Section = styled.section`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   background-image: url('/images/homem-a-barba.jpg');
   background-size: cover;
@@ -30,26 +28,40 @@ export const Section = styled.section`
     text-align: center;
     color: white;
   }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
 `;
 
 export const ContentContainer = styled.div`
-  padding: 2rem;
+  @media (max-width: 760px){
+    max-height: 600px;
+  }
 `;
 
 export const BoxesContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
-  margin-top: 5rem;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
   }
 `;
 
 export const Box = styled.div`
   background-color: white;
   width: 25%;
+  min-width: 200px;
   margin-left: 10px;
   margin-right: 10px;
   height: 10rem;
@@ -65,7 +77,9 @@ export const Box = styled.div`
   @media screen and (max-width: 768px) {
     width: 80%;
     height: auto;
-    margin-top: 2rem;
+    margin-bottom: 3rem;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
   &:hover {
@@ -75,9 +89,15 @@ export const Box = styled.div`
 
 export const BoxTitle = styled.h3`
   font-size: 2rem;
-  margin-bottom: 2rem;
   text-align: center;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ServicesContainer = styled.section`

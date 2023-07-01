@@ -35,10 +35,10 @@ export default function Site() {
         <ContentContainer>
           <BoxesContainer>
             <Box onClick={() => scrollToSection("#services")}>
-              <BoxTitle>Nossos Serviços</BoxTitle>
+              <BoxTitle>Serviços</BoxTitle>
             </Box>
             <Box onClick={() => scrollToSection("#plans")}>
-              <BoxTitle>Nossos Planos</BoxTitle>
+              <BoxTitle>Planos</BoxTitle>
             </Box>
             <Box onClick={() => scrollToSection("#promo")}>
               <BoxTitle>Promoções</BoxTitle>
