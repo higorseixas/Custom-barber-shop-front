@@ -9,39 +9,22 @@ export const Icon = ({ icon }: iconInterface) => {
 export const FooterContainer = styled.footer`
   background-color: #f2f2f2;
   padding: 20px 0;
-
-  @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
 `;
 
 export const FooterContent = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+  gap: 2rem;
+  margin-left: 30px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 768px){
+    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-items: center;
   }
 `;
 
-export const HelpColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-right: 10px;
-
-  @media (max-width: 768px) {
-    margin-bottom: 20px;
-  }
-`;
 
 export const HelpLink = styled.a`
   margin-bottom: 5px;
@@ -49,21 +32,28 @@ export const HelpLink = styled.a`
   text-decoration: none;
   line-height: 1.0;
   font-size: 20px;
-
+  
   &:hover {
     text-decoration: underline;
   }
+  `;
+
+export const HelpColumn = styled.div`
+    min-width: 234px;
+    display: flex;
+    flex-direction: column;
 `;
 
 export const InfoColumn = styled.div`
+  min-width: 234px;
   display: flex;
   flex-direction: column;
-  margin-right: 10px;
+`;
 
-  @media (max-width: 768px) {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
+export const SocialColumn = styled.div`
+  min-width: 234px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Title = styled.h4`
@@ -101,15 +91,7 @@ export const StyledIcon = styled(Icon)`
   margin-right: 5px;
 `;
 
-export const SocialColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-right: 20px;
 
-  @media (max-width: 768px) {
-    margin-bottom: 20px;
-  }
-`;
 
 export const SocialContainer = styled.div`
   display: flex;

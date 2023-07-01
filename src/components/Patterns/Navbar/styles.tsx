@@ -9,7 +9,7 @@ export const Icon = ({ icon }: iconInterface) => {
 
 export const NavbarContainer = styled.nav`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 10px;
   background-color: #333;
@@ -21,30 +21,22 @@ export const NavbarContainer = styled.nav`
     justify-content: center;
     align-items: center;
   }
-
-  @media (max-width: 768px) {
-    justify-content: center;
-
-    button:not(:last-child) {
-      display: none;
-    }
-  }
 `;
 
 export const NavbarButtonContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  margin: 0 auto;
+  width: 830px;
 `;
 
 export const VerticalLine = styled.div`
   border-left: 1px solid #ccc;
-  height: 30px;
+  height: 50px;
   margin: 0 10px;
 `;
 
 export const StyledIcon = styled(Icon)`
   margin-right: 15px;
 `;
+
+export const LinkDiv = styled.div`
+  min-width: 105px;
+`
