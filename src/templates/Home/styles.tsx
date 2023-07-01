@@ -220,6 +220,13 @@ export const PlansTitle = styled.h2`
   font-size: 3rem;
   margin-bottom: 1rem;
   color: white;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const PlansBoxesContainer = styled.div`
@@ -240,9 +247,7 @@ export const PlanBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  margin: 1rem;
+  justify-content: space-around;
 
   @media screen and (max-width: 768px) {
     width: 80%;
@@ -252,15 +257,39 @@ export const PlanBox = styled.div`
 `;
 
 export const PlanBoxTitle = styled.h3`
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
   color: white;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const PlanBoxText = styled.p`
-  font-size: 2.1rem;
-  text-align: center;
   color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+
+  @media (max-width: 980px) { 
+    font-size: 1.4rem;
+  }
+
+  @media (max-width: 880px) { 
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 800px) { 
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) { 
+    font-size: 1.2rem;
+  }
 `;
 
 export const PlanBoxPrice = styled.p`
@@ -273,6 +302,10 @@ export const Icon = styled.img`
   max-width: 100%;
   height: auto;
   margin-bottom: 5px;
+
+  @media (max-width: 768px) { 
+    max-width: 300px;
+  }
 `;
 
 export const Line = styled.hr`
