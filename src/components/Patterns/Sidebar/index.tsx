@@ -14,7 +14,7 @@ import {
 } from './styles';
 import { SidebarData } from './sidebarData';
 import { SideBarButton, SideBarButtonNavigation } from '../../../components/buttons/Button';
-import { PrimaryLogo } from '../../../components/logo/PrimaryLogo';
+import { PrimaryLogo } from '../../../components/logo/primaryLogo';
 
 
 export default function Sidebar() {
@@ -46,14 +46,15 @@ export default function Sidebar() {
         </LogoContainer>
         <Line />
         {SidebarData.map((item) => (
-          <SideBarButtonNavigation key={item.name}
+          <SideBarButtonNavigation 
+            key={item.name}
             onClick={() => handleChangeContent(item.href)}
           >
             <NavItem
               Collapsed={isCollapsed || false}
               style={{
                 backgroundColor:
-                  selectedContent === item.href ? "rgba(108, 99, 255, 0.7)" : "none",
+                  selectedContent === item.href ? "rgba(108, 99, 255, 0.7)" : undefined,
               }}
             >
               <NavItemIcon Collapsed={isCollapsed || false}>{item.icon}</NavItemIcon>
