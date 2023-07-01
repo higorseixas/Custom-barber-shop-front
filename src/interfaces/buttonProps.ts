@@ -1,4 +1,5 @@
 export interface ButtonProps {
+  display?: string;
   backgroundColor?: string;
   color?: string;
   padding?: string;

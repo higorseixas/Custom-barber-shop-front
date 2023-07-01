@@ -6,6 +6,7 @@ import {
 import styled from "styled-components";
 
 export const PrimaryButton = styled.button<ButtonProps>`
+  display: ${(props) => props.display || 'auto'};
   background-color: ${(props) => props.backgroundColor || 'orange'};
   color: ${(props) => props.color || '#FFFFFF'};
   padding: ${(props) => props.padding || '10px 20px'};
