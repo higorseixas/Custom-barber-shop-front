@@ -21,6 +21,7 @@ import {
   ServicesContainer, 
   ServicesTitle 
 } from "./styles";
+import { LineCenter } from "@/components/LineCenter/LineCenter";
 
 export default function Site() {
   const scrollToSection = (mySection: any) => {
@@ -67,7 +68,7 @@ export default function Site() {
             <ServicesBoxText>R$ 10,00</ServicesBoxText>
           </ServicesBox>
         </ServicesBoxesContainer>
-        <Line/>
+        <LineCenter/>
       </ServicesContainer>
       <PlansContainer id="plans">
         <PlansTitle>NOSSOS PLANOS</PlansTitle>
@@ -94,7 +95,7 @@ export default function Site() {
             <PlanBoxText>Corte Barba e Cabelo 2x No Mês Desconto de R$40</PlanBoxText>
           </PlanBox>
         </PlansBoxesContainer>
-        <Line/>
+        <LineCenter/>
       </PlansContainer>
 
       <PlansContainer id="promo">
