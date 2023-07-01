@@ -19,17 +19,24 @@ export const NavBar = () => {
     setAnchorEl(null);
   };
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
+    if (typeof window !== 'undefined') {
+      // Verifica se o objeto window está disponível
+      setWindowWidth(window.innerWidth);
+      window.addEventListener('resize', handleResize);
+    }
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      if (typeof window !== 'undefined') {
+        // Verifica se o objeto window está disponível
+        window.removeEventListener('resize', handleResize);
+      }
     };
   }, []);
 
