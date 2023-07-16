@@ -95,7 +95,7 @@ export const NavBar = () => {
             </PrimaryButton>
           </NavbarButtonContainer>
 
-            <VerticalLine />
+            {/* <VerticalLine /> */}
             <LinkDiv>
               <Link href={'/login'}>
                 <PrimaryButton span={{ marginLeft: "10px" }}>
